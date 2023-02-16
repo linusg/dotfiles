@@ -34,6 +34,7 @@ in {
     gimp
     glib # For gsettings
     gnome.adwaita-icon-theme
+    gnome.eog
     gnome.nautilus
     grim
     lftp
