@@ -471,7 +471,7 @@ in {
     exec-once = mullvad-gui
     exec-once = firefox
     exec-once = discord
-    exec-once = sleep 10 && hyprctl keyword windowrule "workspace unset, firefox"
-    exec-once = sleep 10 && hyprctl keyword windowrule "workspace unset, discord"
+    exec-once = sleep 60 && hyprctl keyword windowrule "workspace unset, firefox"
+    exec-once = sleep 60 && hyprctl keyword windowrule "workspace unset, discord"
   '';
 }
