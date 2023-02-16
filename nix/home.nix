@@ -462,6 +462,8 @@ in {
     bindm = $mainMod SHIFT, mouse:272, resizewindow
 
     # Desktop
+    # https://wiki.hyprland.org/FAQ/#some-of-my-apps-take-a-really-long-time-to-open
+    exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
     exec-once = waybar
     exec-once = swaybg -m fill -i ~/.config/wallpaper.jpg
     exec-once = hyprctl setcursor capitaine-cursors 24

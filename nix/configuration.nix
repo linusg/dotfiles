@@ -38,6 +38,7 @@
 
   services.dbus.enable = true;
   services.fprintd.enable = true;
+  services.gvfs.enable = true;
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
   '';
