@@ -187,7 +187,7 @@ in {
   };
   programs.swaylock.settings = {
     effect-blur = "50x4";
-    image = "/home/linus/.config/wallpaper.jpg";
+    image = "${config.home.homeDirectory}/.config/wallpaper.jpg";
     font = "JetBrains Mono";
     clock = true;
     timestr = "%R";
