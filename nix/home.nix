@@ -35,6 +35,7 @@ in {
     glib # For gsettings
     gnome.adwaita-icon-theme
     gnome.nautilus
+    grim
     lftp
     mullvad-vpn
     neofetch
@@ -49,11 +50,14 @@ in {
     python
     python310Packages.black
     python310Packages.pip
+    slurp
     swaybg
     swaylock-effects
     thefuck
     ungoogled-chromium
     vlc
+    wl-clipboard
+    xdg-user-dirs
     yarn
   ];
 
@@ -436,6 +440,8 @@ in {
     bind = $mainMod, Q, killactive
     bind = $mainMod, Return, exec, kitty -1
     bind = $mainMod, Space, exec, rofi -show drun
+    bind = , Print, exec, screenshot_path="$(xdg-user-dir PICTURES)/$(date +'screenshot_%F_%H%M%S.png')"; grim -g "$(slurp)" "$screenshot_path" && wl-copy < "$screenshot_path" && dunstify --raw_icon "$screenshot_path" "Screenshot" "$screenshot_path has been saved and copied to the clipboard."
+    bind = $mainMod, Print, exec, screenshot_path="$(xdg-user-dir PICTURES)/$(date +'screenshot_%F_%H%M%S.png')"; grim "$screenshot_path" && wl-copy < "$screenshot_path" && dunstify --raw_icon "$screenshot_path" "Screenshot" "$screenshot_path has been saved and copied to the clipboard."
     bind = CTRL ALT, T, exec, kitty -1 --class=float
     bind = ALT, Tab, workspace, e+1
     bind = ALT SHIFT, Tab, workspace, e-1
