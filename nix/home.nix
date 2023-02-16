@@ -84,6 +84,11 @@ in {
     };
   };
 
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+  };
+
   services.dunst = {
     enable = true;
     settings = {
