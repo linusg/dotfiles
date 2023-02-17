@@ -329,13 +329,6 @@ in {
         "hyprland/window" = {
           max-length = 50;
         };
-        idle_inhibitor = {
-          format = "<span color='#${colors.accent}'>[</span>{icon}<span color='#${colors.accent}'>]</span>";
-          format-icons = {
-            activated = "☕";
-            deactivated = "😴";
-          };
-        };
         backlight = {
           format = "<span color='#${colors.accent}'>[</span>{icon} {percent}%<span color='#${colors.accent}'>]</span>";
           format-icons = ["🔅" "🔆"];
@@ -351,6 +344,13 @@ in {
         clock = {
           format = "<span color='#${colors.accent}'>[</span>{:%H:%M}<span color='#${colors.accent}'>]</span>";
           format-alt = "<span color='#${colors.accent}'>[</span>{:%Y-%m-%d}<span color='#${colors.accent}'>]</span>";
+        };
+        idle_inhibitor = {
+          format = "<span color='#${colors.accent}'>[</span>{icon}<span color='#${colors.accent}'>]</span>";
+          format-icons = {
+            activated = "☕";
+            deactivated = "😴";
+          };
         };
         network = {
           format = "<span color='#${colors.accent}'>[</span>🌐<span color='#${colors.accent}'>]</span>";
