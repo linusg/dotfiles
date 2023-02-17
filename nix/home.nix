@@ -417,6 +417,9 @@ in {
       #clock {
         margin-right: 10px;
       }
+      #tray {
+        margin-left: 10px;
+      }
     '';
   };
   programs.zsh = {
