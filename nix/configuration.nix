@@ -94,7 +94,6 @@
   fonts.fonts = with pkgs; [
     inter
     jetbrains-mono
-    material-icons
   ];
 
   # Enable the OpenSSH daemon.

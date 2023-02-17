@@ -327,19 +327,20 @@ in {
           max-length = 50;
         };
         idle_inhibitor = {
+          format = "<span color='#${colors.accent}'>[</span>{icon}<span color='#${colors.accent}'>]</span>";
           format-icons = {
             activated = "☕";
             deactivated = "😴";
           };
-          format = "<span color='#${colors.accent}'>[</span>{icon}<span color='#${colors.accent}'>]</span>";
         };
         backlight = {
-          format = "<span color='#${colors.accent}'>[</span><span alpha='70%'>blg</span> {percent}%<span color='#${colors.accent}'>]</span>";
+          format = "<span color='#${colors.accent}'>[</span>{icon} {percent}%<span color='#${colors.accent}'>]</span>";
+          format-icons = ["🔅" "🔆"];
         };
         battery = {
-          format = "<span color='#${colors.accent}'>[</span><span alpha='70%'>bat</span> {capacity}%<span color='#${colors.accent}'>]</span>";
-          format-charging = "<span color='#${colors.accent}'>[</span><span alpha='70%'>bat</span> {capacity}%⚡<span color='#${colors.accent}'>]</span>";
-          format-discharging-warning = "<span color='#${colors.accent}'>[</span><span alpha='70%'>bat</span> {capacity}%⚠️<span color='#${colors.accent}'>]</span>";
+          format = "<span color='#${colors.accent}'>[</span>🔋 {capacity}%<span color='#${colors.accent}'>]</span>";
+          format-charging = "<span color='#${colors.accent}'>[</span>⚡ {capacity}%<span color='#${colors.accent}'>]</span>";
+          format-discharging-warning = "<span color='#${colors.accent}'>[</span>🪫 {capacity}%<span color='#${colors.accent}'>]</span>";
           states = {
             warning = 15;
           };
@@ -350,15 +351,15 @@ in {
           tooltip-format = "{:%Y-%m-%d}";
         };
         network = {
-          format-ethernet = "<span color='#${colors.accent}'>[</span><span alpha='70%'>net</span> <span color='#${colors.accent}'>]</span>";
-          format-wifi = "<span color='#${colors.accent}'>[</span><span alpha='70%'>net</span> <span color='#${colors.accent}'>]</span>";
-          format-disconnected = "<span color='#${colors.accent}'>[</span><span alpha='70%'>net</span> <span color='#${colors.accent}'>]</span>";
+          format = "<span color='#${colors.accent}'>[</span>🌐<span color='#${colors.accent}'>]</span>";
+          format-disconnected = "<span color='#${colors.accent}'>[</span>❌<span color='#${colors.accent}'>]</span>";
           max-length = 12;
           tooltip-format = "{essid}\n{ifname}\n{ipaddr}";
         };
         pulseaudio = {
-          format = "<span color='#${colors.accent}'>[</span><span alpha='70%'>vol</span> {volume}%<span color='#${colors.accent}'>]</span>";
-          format-muted = "<span color='#${colors.accent}'>[</span><span alpha='70%'>vol</span> Muted<span color='#${colors.accent}'>]</span>";
+          format = "<span color='#${colors.accent}'>[</span>{icon} {volume}%<span color='#${colors.accent}'>]</span>";
+          format-muted = "<span color='#${colors.accent}'>[</span>🔇 Muted<span color='#${colors.accent}'>]</span>";
+          format-icons = ["🔈" "🔉" "🔊"];
           on-click = "pavucontrol";
         };
         tray = {
@@ -369,7 +370,7 @@ in {
     };
     style = ''
       * {
-        font-family: "JetBrains Mono", "Material Icons";
+        font-family: "JetBrains Mono";
         font-size: 12px;
       }
       window#waybar {
