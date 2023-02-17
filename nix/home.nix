@@ -503,11 +503,14 @@ in {
 
     # Autostart
     windowrule = workspace 1 silent, firefox
-    windowrule = workspace 2 silent, discord
+    windowrule = workspace 2 silent, thunderbird
+    windowrule = workspace 3 silent, discord
     exec-once = mullvad-gui
     exec-once = firefox
+    exec-once = thunderbird
     exec-once = discord
     exec-once = sleep 60 && hyprctl keyword windowrule "workspace unset, firefox"
+    exec-once = sleep 60 && hyprctl keyword windowrule "workspace unset, thunderbird"
     exec-once = sleep 60 && hyprctl keyword windowrule "workspace unset, discord"
   '';
 }
