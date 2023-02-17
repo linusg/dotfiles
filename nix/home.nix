@@ -259,6 +259,7 @@ in {
     extensions = with pkgs.vscode-extensions; [
       dbaeumer.vscode-eslint
       esbenp.prettier-vscode
+      ms-python.python
       ms-python.vscode-pylance
       pkief.material-icon-theme
       zhuangtongfa.material-theme
@@ -286,6 +287,10 @@ in {
       };
       "[jsonc]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      # Required for the Python language server, which tries to add this to the config file (but set to true)
+      "[python]" = {
+        "editor.formatOnType" = false;
       };
       "[typescript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
