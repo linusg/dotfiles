@@ -489,14 +489,18 @@ in {
     bindm = $mainMod, mouse:272, movewindow
     bindm = $mainMod SHIFT, mouse:272, resizewindow
 
-    # Desktop
+    # Hacks :^)
     # https://wiki.hyprland.org/FAQ/#some-of-my-apps-take-a-really-long-time-to-open
     exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+    exec-once = systemctl --user restart 'xdg-desktop-portal*'
+    # https://wiki.hyprland.org/Nix/Options-Overrides/#xwayland-hidpi
+    exec-once = xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
+
+    # Desktop
     exec-once = waybar
     exec-once = swaybg -m fill -i ~/.config/wallpaper.jpg
     exec-once = hyprctl setcursor capitaine-cursors 24
     exec-once = gsettings set org.gnome.desktop.interface cursor-theme capitaine-cursors
-    exec-once = xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
 
     # graphical-session.target starts further services (nm-applet, swayidle, udiskie)
     exec-once = systemctl --user start graphical-session.target
