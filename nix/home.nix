@@ -29,6 +29,7 @@ in {
 
   home.packages = with pkgs; [
     alejandra
+    alsa-utils # For alsamixer
     discord
     element-desktop
     epiphany
