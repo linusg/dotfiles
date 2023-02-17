@@ -370,7 +370,7 @@ in {
           format = "<span color='#${colors.accent}'>[</span>🌐<span color='#${colors.accent}'>]</span>";
           format-disconnected = "<span color='#${colors.accent}'>[</span>❌<span color='#${colors.accent}'>]</span>";
           max-length = 12;
-          tooltip-format = "{essid}\n{ifname}\n{ipaddr}";
+          tooltip-format = "{essid} ({signalStrength}%, {frequency}GHz)\n{ifname}\n{ipaddr}";
         };
         pulseaudio = {
           format = "<span color='#${colors.accent}'>[</span>{icon} {volume}%<span color='#${colors.accent}'>]</span>";
