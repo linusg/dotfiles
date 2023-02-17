@@ -38,12 +38,14 @@ in {
     gnome.nautilus
     grim
     lftp
+    lshw
     mullvad-vpn
     neofetch
     networkmanagerapplet
     nodejs
     optipng
     pavucontrol
+    pciutils # For lspci
     poetry
     pre-commit
     prismlauncher
@@ -56,6 +58,7 @@ in {
     swaylock-effects
     thefuck
     ungoogled-chromium
+    usbutils # For lsusb
     vlc
     wl-clipboard
     xdg-user-dirs
