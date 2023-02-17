@@ -336,7 +336,7 @@ in {
           interval = 1;
           format = "<span color='#${colors.accent}'>[</span><span color='limegreen'>{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7}</span> {usage}%<span color='#${colors.accent}'>]</span>";
           format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
-          on-click = "btm";
+          on-click = "kitty --class=float btm";
         };
         backlight = {
           format = "<span color='#${colors.accent}'>[</span>{icon} {percent}%<span color='#${colors.accent}'>]</span>";
@@ -364,7 +364,7 @@ in {
         memory = {
           interval = 1;
           format = "<span color='#${colors.accent}'>[</span>{used:0.1f}/{total:0.1f}GiB<span color='#${colors.accent}'>]</span>";
-          on-click = "btm";
+          on-click = "kitty --class=float btm";
         };
         network = {
           format = "<span color='#${colors.accent}'>[</span>🌐<span color='#${colors.accent}'>]</span>";
@@ -382,7 +382,7 @@ in {
           interval = 5;
           hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input"; # coretemp
           format = "<span color='#${colors.accent}'>[</span>🌡️ {temperatureC}°C<span color='#${colors.accent}'>]</span>";
-          on-click = "btm";
+          on-click = "kitty --class=float btm";
         };
         tray = {
           show-passive-items = true;
