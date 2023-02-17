@@ -314,6 +314,9 @@ in {
         ];
         modules-left = [
           "tray"
+          "cpu"
+          "memory"
+          "temperature"
         ];
         modules-center = [
           "hyprland/window"
@@ -328,6 +331,12 @@ in {
         ];
         "hyprland/window" = {
           max-length = 50;
+        };
+        cpu = {
+          interval = 1;
+          format = "<span color='#${colors.accent}'>[</span><span color='limegreen'>{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7}</span> {usage}%<span color='#${colors.accent}'>]</span>";
+          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+          on-click = "btm";
         };
         backlight = {
           format = "<span color='#${colors.accent}'>[</span>{icon} {percent}%<span color='#${colors.accent}'>]</span>";
@@ -352,6 +361,11 @@ in {
             deactivated = "😴";
           };
         };
+        memory = {
+          interval = 1;
+          format = "<span color='#${colors.accent}'>[</span>{used:0.1f}/{total:0.1f}GiB<span color='#${colors.accent}'>]</span>";
+          on-click = "btm";
+        };
         network = {
           format = "<span color='#${colors.accent}'>[</span>🌐<span color='#${colors.accent}'>]</span>";
           format-disconnected = "<span color='#${colors.accent}'>[</span>❌<span color='#${colors.accent}'>]</span>";
@@ -363,6 +377,12 @@ in {
           format-muted = "<span color='#${colors.accent}'>[</span>🔇 Muted<span color='#${colors.accent}'>]</span>";
           format-icons = ["🔈" "🔉" "🔊"];
           on-click = "pavucontrol";
+        };
+        temperature = {
+          interval = 5;
+          hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input"; # coretemp
+          format = "<span color='#${colors.accent}'>[</span>🌡️ {temperatureC}°C<span color='#${colors.accent}'>]</span>";
+          on-click = "btm";
         };
         tray = {
           show-passive-items = true;
@@ -382,9 +402,12 @@ in {
       #backlight,
       #battery,
       #clock,
+      #cpu,
       #idle_inhibitor,
+      #memory,
       #network,
       #pulseaudio,
+      #temperature,
       #window {
         margin: 2px 0 2px 2px;
       }
