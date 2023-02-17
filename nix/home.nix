@@ -459,7 +459,7 @@ in {
     }
 
     windowrulev2 = float, class:^(pavucontrol|udiskie|float)$
-    windowrulev2 = float, title:^(Firefox — Sharing Indicator)$
+    windowrulev2 = float, title:^(Firefox — Sharing Indicator|Open File|Open Folder)$
 
     $mainMod = SUPER
     bind = $mainMod, E, exec, rofi -show emoji
