@@ -37,6 +37,7 @@ in {
     gnome.eog
     gnome.nautilus
     grim
+    jetbrains.clion
     lftp
     lshw
     mullvad-vpn
