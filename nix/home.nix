@@ -7,6 +7,7 @@
   colors = {
     accent = "0073d5";
     background = "111111";
+    error = "d50043";
   };
 in {
   # Home Manager needs a bit of information about you and the
@@ -111,6 +112,10 @@ in {
         font = "JetBrains Mono 10";
         format = "<span color='#${colors.accent}'>[</span><span alpha='70%'>%a</span> %s<span color='#${colors.accent}'>]</span>\\n%b";
         markup = "full";
+      };
+      urgency_critical = {
+        frame_color = "#${colors.error}";
+        format = "<span color='#${colors.error}'>[</span><span alpha='70%'>%a</span> %s<span color='#${colors.error}'>]</span>\\n%b";
       };
     };
   };
