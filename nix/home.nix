@@ -350,8 +350,7 @@ in {
         };
         clock = {
           format = "<span color='#${colors.accent}'>[</span>{:%H:%M}<span color='#${colors.accent}'>]</span>";
-          tooltip = true;
-          tooltip-format = "{:%Y-%m-%d}";
+          format-alt = "<span color='#${colors.accent}'>[</span>{:%Y-%m-%d}<span color='#${colors.accent}'>]</span>";
         };
         network = {
           format = "<span color='#${colors.accent}'>[</span>🌐<span color='#${colors.accent}'>]</span>";
