@@ -258,6 +258,7 @@ in {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       dbaeumer.vscode-eslint
+      eamodio.gitlens
       esbenp.prettier-vscode
       ms-python.python
       ms-python.vscode-pylance
