@@ -85,6 +85,10 @@ in {
   gtk = {
     enable = true;
     font.name = "Inter 10";
+    iconTheme = {
+      name = "la-capitaine-icon-theme";
+      package = pkgs.la-capitaine-icon-theme;
+    };
     theme = {
       name = "WhiteSur-Dark";
       package = pkgs.whitesur-gtk-theme;
@@ -98,6 +102,11 @@ in {
 
   services.dunst = {
     enable = true;
+    iconTheme = {
+      name = config.gtk.iconTheme.name;
+      package = config.gtk.iconTheme.package;
+      size = "32x32";
+    };
     settings = {
       global = {
         width = "(200, 400)";
@@ -455,7 +464,7 @@ in {
     bind = $mainMod, M, exit
     bind = $mainMod, Q, killactive
     bind = $mainMod, Return, exec, kitty -1
-    bind = $mainMod, Space, exec, rofi -show drun
+    bind = $mainMod, Space, exec, rofi -show drun -show-icons
     bind = , Print, exec, screenshot_path="$(xdg-user-dir PICTURES)/$(date +'screenshot_%F_%H%M%S.png')"; grim -g "$(slurp)" "$screenshot_path" && wl-copy < "$screenshot_path" && dunstify --raw_icon "$screenshot_path" "Screenshot" "$screenshot_path has been saved and copied to the clipboard."
     bind = $mainMod, Print, exec, screenshot_path="$(xdg-user-dir PICTURES)/$(date +'screenshot_%F_%H%M%S.png')"; grim "$screenshot_path" && wl-copy < "$screenshot_path" && dunstify --raw_icon "$screenshot_path" "Screenshot" "$screenshot_path has been saved and copied to the clipboard."
     bind = CTRL ALT, T, exec, kitty -1 --class=float
