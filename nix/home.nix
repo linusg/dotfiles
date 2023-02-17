@@ -52,7 +52,7 @@ in {
     pre-commit
     prismlauncher
     pulseaudio # For pactl
-    python
+    python3
     python310Packages.black
     python310Packages.pip
     scc
