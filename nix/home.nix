@@ -339,13 +339,13 @@ in {
           on-click = "btm";
         };
         backlight = {
-          format = "<span color='#${colors.accent}'>[</span>{icon} {percent}%<span color='#${colors.accent}'>]</span>";
+          format = "<span color='#${colors.accent}'>[</span>{icon} {percent}%<span color='#${colors.accent}'>]</span>";
           format-icons = ["🔅" "🔆"];
         };
         battery = {
-          format = "<span color='#${colors.accent}'>[</span>🔋 {capacity}%<span color='#${colors.accent}'>]</span>";
-          format-charging = "<span color='#${colors.accent}'>[</span>⚡ {capacity}%<span color='#${colors.accent}'>]</span>";
-          format-discharging-warning = "<span color='#${colors.accent}'>[</span>🪫 {capacity}%<span color='#${colors.accent}'>]</span>";
+          format = "<span color='#${colors.accent}'>[</span>🔋 {capacity}%<span color='#${colors.accent}'>]</span>";
+          format-charging = "<span color='#${colors.accent}'>[</span>⚡ {capacity}%<span color='#${colors.accent}'>]</span>";
+          format-discharging-warning = "<span color='#${colors.accent}'>[</span>🪫 {capacity}%<span color='#${colors.accent}'>]</span>";
           states = {
             warning = 15;
           };
@@ -373,15 +373,15 @@ in {
           tooltip-format = "{essid} ({signalStrength}%, {frequency}GHz)\n{ifname}\n{ipaddr}";
         };
         pulseaudio = {
-          format = "<span color='#${colors.accent}'>[</span>{icon} {volume}%<span color='#${colors.accent}'>]</span>";
-          format-muted = "<span color='#${colors.accent}'>[</span>🔇 Muted<span color='#${colors.accent}'>]</span>";
+          format = "<span color='#${colors.accent}'>[</span>{icon} {volume}%<span color='#${colors.accent}'>]</span>";
+          format-muted = "<span color='#${colors.accent}'>[</span>🔇 Muted<span color='#${colors.accent}'>]</span>";
           format-icons = ["🔈" "🔉" "🔊"];
           on-click = "pavucontrol";
         };
         temperature = {
           interval = 5;
           hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input"; # coretemp
-          format = "<span color='#${colors.accent}'>[</span>🌡️ {temperatureC}°C<span color='#${colors.accent}'>]</span>";
+          format = "<span color='#${colors.accent}'>[</span>🌡️ {temperatureC}°C<span color='#${colors.accent}'>]</span>";
           on-click = "btm";
         };
         tray = {
