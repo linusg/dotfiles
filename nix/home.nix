@@ -53,6 +53,7 @@ in {
     python
     python310Packages.black
     python310Packages.pip
+    scc
     slurp
     swaybg
     swaylock-effects
