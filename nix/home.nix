@@ -128,6 +128,13 @@ in {
       };
     };
   };
+  services.gammastep = {
+    enable = true;
+    tray = true;
+    # London
+    latitude = 51.5;
+    longitude = 0.0;
+  };
   services.swayidle = {
     enable = true;
     events = [
