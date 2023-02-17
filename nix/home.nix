@@ -251,11 +251,7 @@ in {
   };
   programs.thunderbird = {
     enable = true;
-    profiles = {
-      leute-server = {
-        isDefault = true;
-      };
-    };
+    profiles = {};
   };
   programs.vim.enable = true;
   programs.vscode = {
