@@ -79,10 +79,6 @@ in {
     x11.enable = true;
   };
 
-  home.sessionVariables = {
-    EDITOR = "vim";
-  };
-
   fonts.fontconfig.enable = true;
 
   gtk = {
@@ -434,6 +430,7 @@ in {
     initExtra = ''
       eval $(thefuck --alias)
       export PATH="$(yarn global bin):$PATH"
+      export EDITOR='vim';
       export SERENITY_SOURCE_DIR="${serenitySourceDir}"
     '';
     shellAliases = {
