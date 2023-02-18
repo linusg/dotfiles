@@ -540,6 +540,7 @@ in {
 
     # graphical-session.target starts further services (nm-applet, swayidle, udiskie)
     exec-once = systemctl --user start graphical-session.target
+    exec-once = systemctl --user start blueman-manager.service
 
     # Autostart
     windowrule = workspace 1 silent, firefox

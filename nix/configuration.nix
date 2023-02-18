@@ -35,8 +35,10 @@
     ];
   };
 
+  hardware.bluetooth.enable = true;
   hardware.opengl.driSupport32Bit = true;
 
+  services.blueman.enable = true;
   services.dbus.enable = true;
   services.fprintd.enable = true;
   services.gvfs.enable = true;
