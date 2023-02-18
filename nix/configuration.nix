@@ -61,7 +61,8 @@
   environment.pathsToLink = ["/share/zsh"];
   environment.sessionVariables = {
     GDK_SCALE = "2";
-    # NOTE: QT_SCALE_FACTOR=2 doesn't seem to be needed and scales everything up _again_.
+    # NOTE: QT_SCALE_FACTOR=2 isn't needed when using QT_QPA_PLATFORM=wayland, which already scales appropriately.
+    QT_QPA_PLATFORMTHEME = "gtk3";
     XCURSOR_THEME = "capitaine-cursors";
     XCURSOR_SIZE = "48";
   };
