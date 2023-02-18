@@ -424,7 +424,9 @@ in {
       }
     '';
   };
-  programs.zsh = {
+  programs.zsh = let
+    serenitySourceDir = "${config.home.homeDirectory}/Dev/serenity";
+  in {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
@@ -432,9 +434,11 @@ in {
     initExtra = ''
       eval $(thefuck --alias)
       export PATH="$(yarn global bin):$PATH"
+      export SERENITY_SOURCE_DIR="${serenitySourceDir}"
     '';
     shellAliases = {
       cat = "bat";
+      serenity = "${serenitySourceDir}/Meta/serenity.sh";
     };
     oh-my-zsh = {
       enable = true;
