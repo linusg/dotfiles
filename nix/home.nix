@@ -503,16 +503,16 @@ in {
 
     $mainMod = SUPER
     bind = $mainMod, E, exec, rofi -show emoji
-    bind = $mainMod, F, exec, nautilus
     bind = $mainMod, J, togglesplit
     bind = $mainMod, L, exec, swaylock
-    bind = $mainMod, M, exit
+    bind = $mainMod, N, exec, nautilus
     bind = $mainMod, Q, killactive
     bind = $mainMod, Return, exec, kitty -1
     bind = $mainMod, Space, exec, rofi -show drun -show-icons
     bind = , Print, exec, screenshot_path="$(xdg-user-dir PICTURES)/$(date +'screenshot_%F_%H%M%S.png')"; grim -g "$(slurp)" "$screenshot_path" && wl-copy < "$screenshot_path" && dunstify --raw_icon "$screenshot_path" "Screenshot" "$screenshot_path has been saved and copied to the clipboard."
     bind = $mainMod, Print, exec, screenshot_path="$(xdg-user-dir PICTURES)/$(date +'screenshot_%F_%H%M%S.png')"; grim "$screenshot_path" && wl-copy < "$screenshot_path" && dunstify --raw_icon "$screenshot_path" "Screenshot" "$screenshot_path has been saved and copied to the clipboard."
     bind = CTRL ALT, T, exec, kitty -1 --class=float
+    bind = CTRL ALT, Delete, exit
     bind = ALT, Tab, workspace, e+1
     bind = ALT SHIFT, Tab, workspace, e-1
     binde = ,XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
