@@ -494,7 +494,10 @@ in {
     }
 
     windowrulev2 = float, class:^(pavucontrol|udiskie|float)$
-    windowrulev2 = float, title:^(Firefox — Sharing Indicator|Open File|Open Folder)$
+    windowrulev2 = float, title:^(Firefox — Sharing Indicator|Picture-in-Picture|Open File|Open Folder)$
+    windowrulev2 = pin, title:^(Picture-in-Picture)$
+    windowrulev2 = size 300 180, title:^(Picture-in-Picture)$
+    windowrulev2 = move 800 540, title:^(Picture-in-Picture)$
 
     $mainMod = SUPER
     bind = $mainMod, E, exec, rofi -show emoji
