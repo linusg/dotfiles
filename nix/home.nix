@@ -54,7 +54,6 @@ in {
     poetry
     pre-commit
     prismlauncher
-    pulseaudio # For pactl
     python3
     python310Packages.black
     python310Packages.pip
@@ -516,11 +515,11 @@ in {
     bind = CTRL ALT, T, exec, kitty -1 --class=float
     bind = ALT, Tab, workspace, e+1
     bind = ALT SHIFT, Tab, workspace, e-1
-    binde = ,XF86AudioRaiseVolume, exec, pactl set-sink-mute @DEFAULT_SINK@ 0
-    binde = ,XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
-    binde = ,XF86AudioLowerVolume, exec, pactl set-sink-mute @DEFAULT_SINK@ 0
-    binde = ,XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
-    binde = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
+    binde = ,XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+    binde = ,XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ --limit 1.0
+    binde = ,XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+    binde = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- --limit 1.0
+    binde = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
     binde = ,XF86MonBrightnessDown, exec, light -U 10
     binde = ,XF86MonBrightnessUp, exec, light -A 10
     bindm = $mainMod, mouse:272, movewindow
