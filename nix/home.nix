@@ -31,6 +31,7 @@ in {
     alejandra
     alsa-utils # For alsamixer
     baobab
+    clang-tools # For clang-format
     discord
     element-desktop
     epiphany
