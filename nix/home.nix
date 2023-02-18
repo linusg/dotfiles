@@ -507,6 +507,7 @@ in {
     bind = $mainMod, J, togglesplit
     bind = $mainMod, L, exec, swaylock
     bind = $mainMod, N, exec, nautilus
+    bind = $mainMod, P, pin
     bind = $mainMod, Q, killactive
     bind = $mainMod, Return, exec, kitty -1
     bind = $mainMod, Space, exec, rofi -show drun -show-icons
