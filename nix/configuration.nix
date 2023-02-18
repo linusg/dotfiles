@@ -51,6 +51,13 @@
   services.printing.enable = true;
   services.thermald.enable = true;
   services.udisks2.enable = true;
+  services.upower = {
+    enable = true;
+    percentageLow = 15;
+    percentageCritical = 5;
+    percentageAction = 2;
+    criticalPowerAction = "PowerOff";
+  };
   services.xserver = {
     enable = true;
     layout = "gb";

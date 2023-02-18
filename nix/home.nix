@@ -134,6 +134,7 @@ in {
     latitude = 51.5;
     longitude = 0.0;
   };
+  services.poweralertd.enable = true;
   services.swayidle = {
     enable = true;
     events = [
