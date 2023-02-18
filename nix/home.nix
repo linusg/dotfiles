@@ -503,6 +503,7 @@ in {
 
     $mainMod = SUPER
     bind = $mainMod, E, exec, rofi -show emoji
+    bind = $mainMod, F, togglefloating
     bind = $mainMod, J, togglesplit
     bind = $mainMod, L, exec, swaylock
     bind = $mainMod, N, exec, nautilus
