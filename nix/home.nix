@@ -30,6 +30,7 @@ in {
   home.packages = with pkgs; [
     alejandra
     alsa-utils # For alsamixer
+    baobab
     discord
     element-desktop
     epiphany
