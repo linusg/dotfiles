@@ -54,9 +54,9 @@ in {
     poetry
     pre-commit
     prismlauncher
-    python3
-    python310Packages.black
-    python310Packages.pip
+    python311
+    python311Packages.black
+    python311Packages.pip
     scc
     slurp
     swaybg
