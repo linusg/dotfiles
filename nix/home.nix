@@ -119,10 +119,16 @@ in {
         font = "JetBrains Mono 10";
         format = "<span color='#${colors.accent}'>[</span>%a<span color='#${colors.accent}'>]</span>\\n%s\\n%b";
         markup = "full";
+        enable_posix_regex = true;
       };
       urgency_critical = {
         frame_color = "#${colors.error}";
         format = "<span color='#${colors.error}'>[</span>%a<span color='#${colors.error}'>]</span>\\n%s\\n%b";
+      };
+      poweralertd_noise = {
+        appname = "poweralertd";
+        body = ".*(Battery discharging|Battery fully charged).*";
+        format = "";
       };
     };
   };
