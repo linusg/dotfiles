@@ -480,6 +480,7 @@ in {
       repeat_rate = 25
       repeat_delay = 300
       touchpad {
+        disable_while_typing = false
         natural_scroll = true
       }
     }
