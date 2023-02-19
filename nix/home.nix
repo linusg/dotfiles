@@ -387,7 +387,9 @@ in {
           format = "<span color='#${colors.accent}'>[</span>🌐<span color='#${colors.accent}'>]</span>";
           format-disconnected = "<span color='#${colors.accent}'>[</span>❌<span color='#${colors.accent}'>]</span>";
           max-length = 12;
-          tooltip-format = "{essid} ({signalStrength}%, {frequency}GHz)\n{ifname}\n{ipaddr}";
+          tooltip-format-ethernet = "{ifname}\n{ipaddr}";
+          tooltip-format-wifi = "{essid} ({signalStrength}%, {frequency}GHz)\n{ifname}\n{ipaddr}";
+          tooltip-format-disconnected = "Disconnected";
           on-click = "kitty --class=float btm --default_widget_type=network --expanded";
         };
         pulseaudio = {
