@@ -117,12 +117,12 @@ in {
         corner_radius = 5;
         gap_size = 5;
         font = "JetBrains Mono 10";
-        format = "<span color='#${colors.accent}'>[</span><span alpha='70%'>%a</span> %s<span color='#${colors.accent}'>]</span>\\n%b";
+        format = "<span color='#${colors.accent}'>[</span>%a<span color='#${colors.accent}'>]</span>\\n%s\\n%b";
         markup = "full";
       };
       urgency_critical = {
         frame_color = "#${colors.error}";
-        format = "<span color='#${colors.error}'>[</span><span alpha='70%'>%a</span> %s<span color='#${colors.error}'>]</span>\\n%b";
+        format = "<span color='#${colors.error}'>[</span>%a<span color='#${colors.error}'>]</span>\\n%s\\n%b";
       };
     };
   };
