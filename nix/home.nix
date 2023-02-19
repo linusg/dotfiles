@@ -329,6 +329,7 @@ in {
           "hyprland/window"
         ];
         modules-right = [
+          "custom/dunst"
           "idle_inhibitor"
           "network"
           "backlight"
@@ -361,6 +362,14 @@ in {
         clock = {
           format = "<span color='#${colors.accent}'>[</span>{:%H:%M}<span color='#${colors.accent}'>]</span>";
           format-alt = "<span color='#${colors.accent}'>[</span>{:%Y-%m-%d}<span color='#${colors.accent}'>]</span>";
+        };
+        "custom/dunst" = {
+          interval = 10;
+          format = "<span color='#${colors.accent}'>[</span>{}<span color='#${colors.accent}'>]</span>";
+          # Upfront sleep is due to https://github.com/Alexays/Waybar/issues/1681
+          exec = "sleep 0.2 && python3 -c 'import json, sys; enabled = sys.argv[1] == \"false\"; print(json.dumps({\"text\": \"🔔\" if enabled else \"🔕\", \"tooltip\": \"Notifications enabled\" if enabled else \"Notifications paused\", \"class\": \"custom_dunst\"}))' $(dunstctl is-paused)";
+          return-type = "json";
+          on-click = "dunstctl set-paused toggle";
         };
         idle_inhibitor = {
           format = "<span color='#${colors.accent}'>[</span>{icon}<span color='#${colors.accent}'>]</span>";
@@ -412,6 +421,7 @@ in {
       #battery,
       #clock,
       #cpu,
+      #custom_dunst,
       #idle_inhibitor,
       #memory,
       #network,
