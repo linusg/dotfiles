@@ -256,6 +256,8 @@ in {
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
+      bbenoist.nix
+      bungcip.better-toml
       dbaeumer.vscode-eslint
       eamodio.gitlens
       esbenp.prettier-vscode
