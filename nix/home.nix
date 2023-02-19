@@ -268,6 +268,7 @@ in {
       "diffEditor.ignoreTrimWhitespace" = false;
       "editor.fontFamily" = "'JetBrains Mono', 'monospace', monospace";
       "files.autoSave" = "afterDelay";
+      "python.formatting.blackPath" = "${pkgs.python311Packages.black}/bin/black";
       "python.formatting.provider" = "black";
       "python.languageServer" = "Pylance";
       "terminal.integrated.enableMultiLinePasteWarning" = false;
