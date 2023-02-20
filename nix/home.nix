@@ -139,6 +139,7 @@ in {
     latitude = 51.5;
     longitude = 0.0;
   };
+  services.mpris-proxy.enable = true;
   services.poweralertd.enable = true;
   services.swayidle = {
     enable = true;
