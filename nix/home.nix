@@ -42,6 +42,7 @@ in {
     gnome.adwaita-icon-theme
     gnome.eog
     gnome.nautilus
+    go-task
     grim
     jetbrains.clion
     lftp
