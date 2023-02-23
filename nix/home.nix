@@ -33,6 +33,7 @@ in {
     android-studio
     baobab
     clang-tools # For clang-format
+    cmake
     discord
     element-desktop
     epiphany
@@ -44,10 +45,12 @@ in {
     grim
     jetbrains.clion
     lftp
+    llvmPackages_15.clang
     lshw
     mullvad-vpn
     neofetch
     networkmanagerapplet
+    ninja
     nodejs
     optipng
     pavucontrol
