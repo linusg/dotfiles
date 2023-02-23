@@ -30,6 +30,7 @@ in {
   home.packages = with pkgs; [
     alejandra
     alsa-utils # For alsamixer
+    android-studio
     baobab
     clang-tools # For clang-format
     discord
