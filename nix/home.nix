@@ -454,6 +454,7 @@ in {
     initExtra = ''
       eval $(thefuck --alias)
       export PATH="$(yarn global bin):$PATH"
+      export PATH="$HOME/.local/bin:$PATH"
       export EDITOR='vim';
       export SERENITY_SOURCE_DIR="${serenitySourceDir}"
     '';
