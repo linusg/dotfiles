@@ -51,7 +51,10 @@ in {
     optipng
     pavucontrol
     pciutils # For lspci
-    poetry
+    (poetry.withPlugins (ps:
+      with ps; [
+        poetry-plugin-up
+      ]))
     pre-commit
     prismlauncher
     python311
