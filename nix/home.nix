@@ -519,11 +519,15 @@ in {
       preserve_split = true
     }
 
+    # Make various windows float by default where tiling doesn't make sense
     windowrulev2 = float, class:^(pavucontrol|udiskie|float)$
     windowrulev2 = float, title:^(Firefox — Sharing Indicator|Picture-in-Picture|About Mozilla Firefox|Open File|Open Folder)$
+    # Move Firefox PiP window into the lower right corner and pin it to the active workspace
     windowrulev2 = pin, title:^(Picture-in-Picture)$
     windowrulev2 = size 300 180, title:^(Picture-in-Picture)$
     windowrulev2 = move 800 540, title:^(Picture-in-Picture)$
+    # Center all floating windows except menus in JetBrains IDEs, which have a title 'win<number>'
+    windowrulev2 = center, floating:1, title:^(?!win[0-9]+$).*$
 
     $mainMod = SUPER
     bind = $mainMod, E, exec, rofi -show emoji
