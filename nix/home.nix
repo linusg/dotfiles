@@ -188,6 +188,7 @@ in {
 
   programs.bat.enable = true;
   programs.bottom.enable = true;
+  programs.direnv.enable = true;
   programs.exa = {
     enable = true;
     enableAliases = true;
