@@ -537,8 +537,10 @@ in {
     windowrulev2 = pin, title:^(Picture-in-Picture)$
     windowrulev2 = size 300 180, title:^(Picture-in-Picture)$
     windowrulev2 = move 800 540, title:^(Picture-in-Picture)$
-    # Center all floating windows except menus in JetBrains IDEs, which have a title 'win<number>'
-    windowrulev2 = center, floating:1, title:^(?!win[0-9]+$).*$
+    # Center all floating windows except menus in:
+    # - JetBrains IDEs, which have a title 'win<number>'
+    # - VLC, which have a title 'vlc'
+    windowrulev2 = center, floating:1, title:^(?!win[0-9]+$|?!vlc$).*$
 
     $mainMod = SUPER
     bind = $mainMod, E, exec, rofi -show emoji
