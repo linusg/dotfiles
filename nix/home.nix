@@ -151,6 +151,7 @@ in {
   services.poweralertd.enable = true;
   services.swayidle = {
     enable = true;
+    systemdTarget = "graphical-session.target";
     events = [
       {
         event = "before-sleep";
