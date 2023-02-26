@@ -28,6 +28,7 @@ in {
   home.file.".config/wallpaper.jpg".source = wallpaper;
 
   home.packages = with pkgs; [
+    act
     alejandra
     alsa-utils # For alsamixer
     android-studio
