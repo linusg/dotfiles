@@ -532,7 +532,7 @@ in {
 
     # Make various windows float by default where tiling doesn't make sense
     windowrulev2 = float, class:^(pavucontrol|udiskie|float)$
-    windowrulev2 = float, title:^(Firefox — Sharing Indicator|Picture-in-Picture|About Mozilla Firefox|Open File|Open Folder)$
+    windowrulev2 = float, title:^(Firefox — Sharing Indicator|Picture-in-Picture|About Mozilla Firefox|Open File|Open Folder|Select one or more files to open)$
     # Move Firefox PiP window into the lower right corner and pin it to the active workspace
     windowrulev2 = pin, title:^(Picture-in-Picture)$
     windowrulev2 = size 300 180, title:^(Picture-in-Picture)$
