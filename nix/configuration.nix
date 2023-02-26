@@ -95,6 +95,7 @@
     isNormalUser = true;
     extraGroups = [
       "networkmanager"
+      "podman"
       "video"
       "wheel"
     ];
@@ -105,6 +106,15 @@
     inter
     jetbrains-mono
   ];
+
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      dockerSocket.enable = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
