@@ -530,6 +530,8 @@ in {
       preserve_split = true
     }
 
+    monitor = eDP-1, preferred, 0x0, 1.8
+
     # Make various windows float by default where tiling doesn't make sense
     windowrulev2 = float, class:^(pavucontrol|udiskie|float)$
     windowrulev2 = float, title:^(Firefox — Sharing Indicator|Picture-in-Picture|About Mozilla Firefox|Open File|Open Folder|Select one or more files to open)$
