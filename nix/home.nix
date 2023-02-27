@@ -329,7 +329,6 @@ in {
         position = "top";
         output = [
           "eDP-1"
-          "HDMI-A-1"
         ];
         modules-left = [
           "tray"
