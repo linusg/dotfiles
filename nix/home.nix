@@ -531,6 +531,7 @@ in {
     }
 
     monitor = eDP-1, preferred, 0x0, 1.8
+    monitor = , preferred, auto, 1
 
     # Make various windows float by default where tiling doesn't make sense
     windowrulev2 = float, class:^(pavucontrol|udiskie|float)$
