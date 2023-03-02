@@ -188,6 +188,7 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.atuin.enable = true;
   programs.bat.enable = true;
   programs.bottom.enable = true;
   programs.direnv.enable = true;
