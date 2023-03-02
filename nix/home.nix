@@ -548,6 +548,7 @@ in {
     $mainMod = SUPER
     bind = $mainMod, E, exec, rofi -show emoji
     bind = $mainMod, F, togglefloating
+    bind = $mainMod, H, exec, vlc "$(~/Dev/nachrichten/nachrichten.py heute)"
     bind = $mainMod, J, togglesplit
     bind = $mainMod, L, exec, swaylock
     bind = $mainMod, N, exec, nautilus
