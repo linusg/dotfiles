@@ -161,12 +161,20 @@ in {
     ];
     timeouts = [
       {
-        timeout = 120;
+        # If the screen is locked manually, the screen gets blanked after 10 seconds of inactivity.
+        timeout = 10;
+        command = "${pkgs.procps}/bin/pgrep swaylock && ${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+        resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+      }
+      {
+        # The screen also auto-locks after a minute of inactivity...
+        timeout = 60;
         command = "${pkgs.swaylock-effects}/bin/swaylock -f";
       }
       {
-        timeout = 15;
-        command = "${pkgs.procps}/bin/pgrep swaylock && ${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+        # ...and gets blanked 10 seconds later.
+        timeout = 70;
+        command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
         resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
       }
     ];
