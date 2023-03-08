@@ -97,8 +97,8 @@ in {
       package = pkgs.la-capitaine-icon-theme;
     };
     theme = {
-      name = "WhiteSur-Dark";
-      package = pkgs.whitesur-gtk-theme;
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
   };
 
