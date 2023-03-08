@@ -43,6 +43,7 @@ in {
     gnome.dconf-editor
     gnome.eog
     gnome.nautilus
+    gnome.gnome-system-monitor
     go-task
     grim
     jetbrains.clion
