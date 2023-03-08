@@ -39,8 +39,8 @@ in {
     element-desktop
     epiphany
     gimp
-    glib # For gsettings
     gnome.adwaita-icon-theme
+    gnome.dconf-editor
     gnome.eog
     gnome.nautilus
     go-task
@@ -591,7 +591,6 @@ in {
     exec-once = waybar
     exec-once = swaybg -m fill -i ~/.config/wallpaper.jpg
     exec-once = hyprctl setcursor capitaine-cursors 24
-    exec-once = gsettings set org.gnome.desktop.interface cursor-theme capitaine-cursors
 
     # graphical-session.target starts further services (nm-applet, swayidle, udiskie)
     exec-once = systemctl --user start graphical-session.target
