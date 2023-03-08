@@ -364,7 +364,7 @@ in {
           interval = 1;
           format = "<span color='#${colors.accent}'>[</span><span color='limegreen'>{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7}</span> {usage}%<span color='#${colors.accent}'>]</span>";
           format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
-          on-click = "kitty --class=float btm --default_widget_type=cpu --expanded";
+          on-click = "kitty --class=kitty-float btm --default_widget_type=cpu --expanded";
         };
         backlight = {
           format = "<span color='#${colors.accent}'>[</span>{icon} {percent}%<span color='#${colors.accent}'>]</span>";
@@ -377,7 +377,7 @@ in {
           states = {
             warning = 15;
           };
-          on-click = "kitty --class=float btm --battery --default_widget_type=battery --expanded";
+          on-click = "kitty --class=kitty-float btm --battery --default_widget_type=battery --expanded";
         };
         clock = {
           format = "<span color='#${colors.accent}'>[</span>{:%H:%M}<span color='#${colors.accent}'>]</span>";
@@ -401,7 +401,7 @@ in {
         memory = {
           interval = 1;
           format = "<span color='#${colors.accent}'>[</span>{used:0.1f}/{total:0.1f}GiB<span color='#${colors.accent}'>]</span>";
-          on-click = "kitty --class=float btm --default_widget_type=memory --expanded";
+          on-click = "kitty --class=kitty-float btm --default_widget_type=memory --expanded";
         };
         network = {
           format = "<span color='#${colors.accent}'>[</span>🌐<span color='#${colors.accent}'>]</span>";
@@ -410,7 +410,7 @@ in {
           tooltip-format-ethernet = "{ifname}\n{ipaddr}";
           tooltip-format-wifi = "{essid} ({signalStrength}%, {frequency}GHz)\n{ifname}\n{ipaddr}";
           tooltip-format-disconnected = "Disconnected";
-          on-click = "kitty --class=float btm --default_widget_type=network --expanded";
+          on-click = "kitty --class=kitty-float btm --default_widget_type=network --expanded";
         };
         pulseaudio = {
           format = "<span color='#${colors.accent}'>[</span>{icon} {volume}%<span color='#${colors.accent}'>]</span>";
@@ -422,7 +422,7 @@ in {
           interval = 5;
           hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input"; # coretemp
           format = "<span color='#${colors.accent}'>[</span>🌡️ {temperatureC}°C<span color='#${colors.accent}'>]</span>";
-          on-click = "kitty --class=float btm --default_widget_type=temperature --expanded";
+          on-click = "kitty --class=kitty-float btm --default_widget_type=temperature --expanded";
         };
         tray = {
           show-passive-items = true;
@@ -512,9 +512,8 @@ in {
     decoration {
       rounding = 6
       blur = true
-      blur_size = 5
-      blur_passes = 4
-      blur_new_optimizations = true
+      blur_size = 10
+      blur_passes = 3
       drop_shadow = false
     }
     input {
@@ -542,7 +541,7 @@ in {
     monitor = , preferred, auto, 1
 
     # Make various windows float by default where tiling doesn't make sense
-    windowrulev2 = float, class:^(pavucontrol|udiskie|float)$
+    windowrulev2 = float, class:^(pavucontrol|udiskie|kitty-float)$
     windowrulev2 = float, title:^(Firefox — Sharing Indicator|Picture-in-Picture|About Mozilla Firefox|Open File|Open Folder|Select one or more files to open|File Upload)$
     # Move Firefox PiP window into the lower right corner and pin it to the active workspace
     windowrulev2 = pin, title:^(Picture-in-Picture)$
@@ -552,6 +551,10 @@ in {
     # - JetBrains IDEs, which have a title 'win<number>'
     # - VLC, which have a title 'vlc'
     windowrulev2 = center, floating:1, title:^(?!win[0-9]+$|?!vlc$).*$
+    # Enable background blur on all windows :)
+    windowrulev2 = opacity 0.95 override 0.95 override, class:^(.*)$
+    # Kitty opacity looks better when only set in its own config
+    windowrulev2 = opacity 1 override 1 override, class:^(kitty|kitty-float)$
 
     $mainMod = SUPER
     bind = $mainMod, E, exec, rofi -show emoji
@@ -566,7 +569,7 @@ in {
     bind = $mainMod, Space, exec, rofi -show drun -show-icons
     bind = , Print, exec, screenshot_path="$(xdg-user-dir PICTURES)/$(date +'screenshot_%F_%H%M%S.png')"; grim -g "$(slurp)" "$screenshot_path" && wl-copy < "$screenshot_path" && dunstify --raw_icon "$screenshot_path" "Screenshot" "$screenshot_path has been saved and copied to the clipboard."
     bind = $mainMod, Print, exec, screenshot_path="$(xdg-user-dir PICTURES)/$(date +'screenshot_%F_%H%M%S.png')"; grim "$screenshot_path" && wl-copy < "$screenshot_path" && dunstify --raw_icon "$screenshot_path" "Screenshot" "$screenshot_path has been saved and copied to the clipboard."
-    bind = CTRL ALT, T, exec, kitty -1 --class=float
+    bind = CTRL ALT, T, exec, kitty -1 --class=kitty-float
     bind = CTRL ALT, Delete, exit
     bind = ALT, Tab, workspace, e+1
     bind = ALT SHIFT, Tab, workspace, e-1
