@@ -46,6 +46,7 @@ in {
     gnome.gnome-system-monitor
     go-task
     grim
+    intel-gpu-tools
     jetbrains.clion
     lftp
     llvmPackages_15.clang
