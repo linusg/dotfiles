@@ -581,8 +581,8 @@ in {
     binde = ,XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
     binde = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- --limit 1.0
     binde = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-    binde = ,XF86MonBrightnessDown, exec, light -U 10
-    binde = ,XF86MonBrightnessUp, exec, light -A 10
+    binde = ,XF86MonBrightnessDown, exec, light -U 5
+    binde = ,XF86MonBrightnessUp, exec, light -A 5
     bindm = $mainMod, mouse:272, movewindow
     bindm = $mainMod SHIFT, mouse:272, resizewindow
 
