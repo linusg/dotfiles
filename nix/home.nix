@@ -520,6 +520,7 @@ in {
     }
     input {
       kb_layout = gb
+      kb_options = compose:rctrl
       repeat_rate = 25
       repeat_delay = 300
       touchpad {
