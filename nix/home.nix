@@ -558,6 +558,8 @@ in {
     windowrulev2 = opacity 0.95 override 0.95 override, class:^(.*)$
     # Kitty opacity looks better when only set in its own config
     windowrulev2 = opacity 1 override 1 override, class:^(kitty|kitty-float)$
+    # Disable animations for the slurp selection layer so it doesn't end up in the screenshot
+    layerrule = noanim, selection
 
     $mainMod = SUPER
     bind = $mainMod, E, exec, rofi -show emoji
